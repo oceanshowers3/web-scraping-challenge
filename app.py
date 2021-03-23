@@ -12,7 +12,8 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 # set up root route 
 @app.route("/")
 def root():
-    mars_info = mongo.db.mars_dict
+
+    # Return template and data
     return render_template("index.html")
 
 # set up scrape route
@@ -20,7 +21,7 @@ def root():
 def scrape():
 
     # set up Mongo Mars data
-    mars_info = mongo.db.mars_dict
+    mars_info = mongo.db.mars_info
 
     # save scrape function as variable
     mars_data = scrape_mars.scrape()

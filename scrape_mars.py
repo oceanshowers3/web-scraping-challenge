@@ -154,7 +154,7 @@ def scrape():
         hemispheres_data.append({'Title' : title, 'Link to article' : img_url})  
         
     # print the hemispheres dictionary
-    pprint(hemispheres_data)
+    print(hemispheres_data)
 
     # ---------------------------------------------------------------------------------------------
 
@@ -167,7 +167,7 @@ def scrape():
 
     # ---------------------------------------------------------------------------------------------
 
-    mars_dict = {
+    mars_info = {
         'article_title': article_title,
         'article_p': article_p,
         'featured_image_url': featured_image_url,
@@ -176,7 +176,7 @@ def scrape():
     }
 
     # --- Return results ---
-    return mars_dict
+    return mars_info
 
 
 
