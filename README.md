@@ -14,7 +14,7 @@ Completed initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Re
 
 ## Mars Facts
 - Visit the Mars Facts webpage [here](https://space-facts.com/mars/) and used Pandas to scrape the table containing facts about the planet including Diameter, Mass, etc.
-- Used Pandas to convert the data to a HTML table string.
+- Used Pandas to convert the data to an HTML table string.
 
 ## Mars Hemispheres
 - Visited the USGS Astrogeology site [here](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars) to obtain high resolution images for each of Mar's hemispheres.
