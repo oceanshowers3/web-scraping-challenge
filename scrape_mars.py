@@ -167,16 +167,16 @@ def scrape():
 
     # ---------------------------------------------------------------------------------------------
 
-    mars_data = {
-        "article_title": article_title,
-        "article_p": article_p,
-        "featured_image_url": featured_image_url,
-        "facts_tables": facts_tables, 
-        "hemispheres_data": hemisphere_image_data
+    mars_dict = {
+        'article_title': article_title,
+        'article_p': article_p,
+        'featured_image_url': featured_image_url,
+        'facts_tables': facts_tables, 
+        'hemispheres_data': hemispheres_data
     }
 
     # --- Return results ---
-    return mars_data
+    return mars_dict
 
 
 
