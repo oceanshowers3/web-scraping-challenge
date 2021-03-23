@@ -23,6 +23,8 @@ def init_browser():
 def scrape():
     browser = init_browser()
 
+    # ---------------------------------------------------------------------------------------------
+
     # NASA Mars News
 
     # ---------------------------------------------------------------------------------------------
@@ -89,16 +91,16 @@ def scrape():
     time.sleep(2) # sleep before next task 
 
     # use Pandas to parse facts url to find all tables
-    facts_tables = pd.read_html(facts_url)
+    facts_table_list = pd.read_html(facts_url)
 
     # select the correct table from the list of tables
-    facts_df = facts_tables[0]
+    facts_table = facts_table_list[0]
 
     # rename the columns with appropriate headings
-    facts_df.columns = ['Variable', 'Value']
+    facts_table.columns = ['Variable', 'Value']
 
     # convert the data to an HTML string
-    facts_string = facts_df.to_html(index=False)
+    facts_string = facts_table.to_html(index=False)
     print(facts_string)
 
     # ---------------------------------------------------------------------------------------------
@@ -171,7 +173,7 @@ def scrape():
         'article_title': article_title,
         'article_p': article_p,
         'featured_image_url': featured_image_url,
-        'facts_tables': facts_tables, 
+        'facts_tables': facts_string, 
         'hemispheres_data': hemispheres_data
     }
 

@@ -8,20 +8,47 @@
     <title>Mission to Mars</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" \
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 
 </head>
 
 <body>
     <div class="container"> -->
     
-    <!-- set up Jumbotron -->
-    <div class="jumbotron text-center border-bottom">
-        <h1 class="font-weight-bold">Mission to Mars</h1>
-        <p><a class="btn btn-primary btn-md" href="/scrape" role="button">Scrape Mars Data</a></p>
+        <!-- set up Jumbotron -->
+        <div class="jumbotron text-center border-bottom">
+            <h1 class="font-weight-bold">Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-md" href="/scrape" role="button">Scrape Mars Data</a></p>
+        </div>
+        <br>
+
+        <!-- set up latest Mars News -->
+        <div class="container">
+            <h2>Latest Mars News</h3>
+            <h3>{{ mars_info.article_title }}</h6>
+            <p>{{ mars_info.article_p }}</p>
+        </div>
+
+        <!-- set up Featured Mars Image -->
+        <div class="row">
+            <div class="col-md-8 border">
+                <h2 class=""><u>Featured Mars Image</u></h2> 
+                </br>
+                <img class="col-md-12 border" src="{{ mars_info.featured_image_url }}" alt="Featured Mars Image">
+            </div>
+
+            <!-- set up Mars Facts Table -->
+            <div class="col-md-4">
+                <br>
+                <div class="card">
+                <h3>Mars Facts</h3>
+                    <div class="card-body">
+                        {{ mars_info.facts_string | safe}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
-
-
 </body>
-
 </html>

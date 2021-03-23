@@ -13,8 +13,11 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 @app.route("/")
 def root():
 
-    # Return template and data
-    return render_template("index.html")
+    # save reference to Mars info
+    mars_info = mongo.db.mars_info.find_one()
+
+    # set up template and info references to return to page
+    return render_template("index.html", mars_info=mars_info)
 
 # set up scrape route
 @app.route("/scrape")
@@ -27,7 +30,7 @@ def scrape():
     mars_data = scrape_mars.scrape()
 
     # update Mongo Mars data
-    mars_info.update({}, mars_data, upsert=True)
+    mars_info.update_many({}, mars_data, upsert=True)
 
     # redirect to root
     return redirect("/")
