@@ -61,7 +61,6 @@ def scrape():
     image_url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
     browser.visit(image_url)
     time.sleep(2) # sleep before next task 
-    image_html = browser.html
 
     # go to 'FULL IMAGE', set the new browser link, and html
     browser.links.find_by_partial_text('FULL IMAGE').first.click()
