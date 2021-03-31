@@ -96,7 +96,7 @@ def scrape():
     facts_table = facts_table_list[0]
 
     # rename the columns with appropriate headings
-    facts_table.columns = ['Variable', 'Value']
+    facts_table.columns = ['Description', 'Mars']
 
     # convert the data to an HTML string
     facts_string = facts_table.to_html(index=False)
@@ -152,7 +152,7 @@ def scrape():
         img_url = f'{hemispheres_base_url}{full_res_path}'
         
         # append title and full res image url to hemispheres dictionary
-        hemispheres_data.append({'Title' : title, 'Link to article' : img_url})  
+        hemispheres_data.append({'title' : title, 'img_url' : img_url})  
         
     # print the hemispheres dictionary
     print(hemispheres_data)
@@ -176,7 +176,7 @@ def scrape():
         'hemispheres_data': hemispheres_data
     }
 
-    # --- Return results ---
+    # --- return results ---
     return mars_info
 
 

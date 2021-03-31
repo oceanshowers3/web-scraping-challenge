@@ -30,10 +30,10 @@ def scrape():
     mars_data = scrape_mars.scrape()
 
     # update Mongo Mars data
-    mars_info.update_many({}, mars_data, upsert=True)
+    mars_info.update({}, mars_data, upsert=True)
 
     # redirect to root
-    return redirect("/")
+    return redirect("/", code=302)
 
 
 if __name__ == "__main__":
